@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <TaskViewer data={tasks}/>
-      <CreateTask  />
+      {/* <CreateTask  /> */}
     </div>
   );
 }
