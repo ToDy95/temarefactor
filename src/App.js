@@ -1,23 +1,16 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import TaskViewer from './components/TaskViewer';
+import CreateTask from './components/CreateTask';
+import { globalContext } from './components/Context/Context';
+import { useContext } from 'react';
 
 function App() {
+  const [tasks] = useContext(globalContext)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TaskViewer data={tasks}/>
+      <CreateTask  />
     </div>
   );
 }
